@@ -260,6 +260,29 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   .btn, .ch { transition: none; }
   .btn:hover, .ch:hover { transform: none; }
 }
+
+/* tienda arriba */
+.shop { background: linear-gradient(180deg, #fff4e6 0, #ffe6c9 100%); border-bottom: 1px solid #f3d3ad; padding-block: clamp(22px, 4vw, 40px) clamp(26px, 4vw, 44px); }
+.shop h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -.025em; margin: 6px 0 8px; }
+.shop-head p { margin: 0; color: var(--ink-soft); max-width: 44rem; }
+.shelf { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 22px; }
+.bk { background: #fff; border-radius: 16px; padding: 10px 10px 14px; display: grid; gap: 8px; align-content: start; box-shadow: 0 10px 24px -16px rgba(120,60,0,.45); min-width: 0; }
+.bk .cv { position: relative; display: block; border-radius: 10px; overflow: hidden; }
+.bk .cv img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; transition: transform .25s ease; }
+.bk .cv:hover img { transform: scale(1.04); }
+.bk .new { position: absolute; top: 8px; right: 8px; background: #ff8a1f; color: #fff; font-weight: 800; font-size: .78rem; padding: 3px 10px; border-radius: 999px; box-shadow: 0 3px 8px rgba(0,0,0,.2); }
+.bk .lang { justify-self: start; background: var(--chip); color: var(--red); font-weight: 700; font-size: .75rem; padding: 2px 10px; border-radius: 999px; }
+.bk h3 { font-size: 1.08rem; font-weight: 800; line-height: 1.2; }
+.bk .pr { font-family: var(--display); display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.bk .pr b { font-size: 1.5rem; color: var(--red); font-weight: 800; }
+.bk .pr s { color: var(--ink-soft); }
+.bk .pr small { font-family: var(--body); font-size: .75rem; background: #fff3c4; padding: 1px 8px; border-radius: 999px; }
+.bk .btn { justify-self: stretch; justify-content: center; padding: 10px 16px; }
+.shop-note { margin: 16px 0 0; font-size: .92rem; color: var(--ink-soft); }
+.shop-note a { color: var(--red); font-weight: 600; }
+@media (max-width: 980px) { .shelf { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 420px) { .bk h3 { font-size: 1rem; } }
+@media (prefers-reduced-motion: reduce) { .bk .cv img { transition: none; } }
 </style>
 
 </head>
@@ -280,6 +303,49 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 </header>
 
 <main id="inicio">
+  <section class="shop" id="libros" aria-label="Libros de Rubia">
+    <div class="wrap">
+      <div class="shop-head">
+        <div>
+          <span class="eyebrow">Libros para niños · con audio</span>
+          <h2>Aprende croata con Rubia 🐱🇭🇷</h2>
+          <p>Ebooks con 12 palabras en croata, audio en cada página, diploma y cuaderno de actividades de regalo. Para niños de 6 a 8 años.</p>
+        </div>
+      </div>
+      <div class="shelf">
+        <article class="bk">
+          <a class="cv" href="https://payhip.com/b/n4NZg" target="_blank" rel="noopener"><img src="rubia/payhip-zv/1-portada.jpg" alt="Portada del ebook Životinje, los animales en croata con Rubia" width="1600" height="900" loading="lazy"><span class="new">Nuevo</span></a>
+          <span class="lang">🇪🇸 En español</span>
+          <h3>Los animales · Životinje</h3>
+          <div class="pr"><b>$7</b></div>
+          <a class="btn primary" href="https://payhip.com/b/n4NZg" target="_blank" rel="noopener">Comprar</a>
+        </article>
+        <article class="bk">
+          <a class="cv" href="https://payhip.com/b/mQasW" target="_blank" rel="noopener"><img src="rubia/payhip/1-portada.jpg" alt="Portada del ebook Halloween en croata con Rubia" width="1600" height="901" loading="lazy"></a>
+          <span class="lang">🇪🇸 En español</span>
+          <h3>Halloween · Noć vještica</h3>
+          <div class="pr"><b class="p-now">$5</b> <s class="p-old">$7</s> <small class="p-note">hasta el 17 de octubre</small></div>
+          <a class="btn primary" href="https://payhip.com/b/mQasW" target="_blank" rel="noopener">Comprar</a>
+        </article>
+        <article class="bk">
+          <a class="cv" href="https://payhip.com/b/d1jph" target="_blank" rel="noopener"><img src="rubia/payhip-zv-en/1-cover.jpg" alt="Cover of the Animals ebook, Croatian for kids with Rubia" width="1600" height="900" loading="lazy"><span class="new">New</span></a>
+          <span class="lang">🇬🇧 In English</span>
+          <h3>Animals · Životinje</h3>
+          <div class="pr"><b>$7</b></div>
+          <a class="btn primary" href="https://payhip.com/b/d1jph" target="_blank" rel="noopener">Buy</a>
+        </article>
+        <article class="bk">
+          <a class="cv" href="https://payhip.com/b/qMg4D" target="_blank" rel="noopener"><img src="rubia/payhip-en/1-cover.jpg" alt="Cover of the Halloween ebook, Croatian for kids with Rubia" width="1600" height="901" loading="lazy"></a>
+          <span class="lang">🇬🇧 In English</span>
+          <h3>Halloween · Noć vještica</h3>
+          <div class="pr"><b class="p-now">$5</b> <s class="p-old">$7</s> <small class="p-note">until October 17</small></div>
+          <a class="btn primary" href="https://payhip.com/b/qMg4D" target="_blank" rel="noopener">Buy</a>
+        </article>
+      </div>
+      <p class="shop-note">Pago seguro en Payhip · recibes el libro al instante en tu correo · <a href="/libros/croata-para-ninos/">Mira cómo es por dentro →</a></p>
+    </div>
+  </section>
+
   <div class="wrap hero">
     <div>
       <span class="eyebrow">Croata para hispanohablantes</span>
@@ -312,32 +378,6 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </div>
   </div>
 
-  <section class="block learn" id="libros">
-    <div class="wrap">
-      <span class="eyebrow">Libros para niños</span>
-      <h2>Croata para niños con Rubia 🎃</h2>
-      <p style="max-width:40rem;margin:0">Ebook de Halloween con 12 palabras en croata, ilustraciones tiernas y audio para escuchar la pronunciación en cada página. Para niños de 6 a 8 años. Incluye de regalo un cuaderno de actividades para imprimir.</p>
-      <div class="books">
-        <div class="book">
-          <img src="rubia/payhip/1-portada.jpg" alt="Portada del ebook Rubia Halloween, croata para niños en español" width="1600" height="901" loading="lazy">
-          <span class="lang">🇪🇸 En español</span>
-          <h3>Rubia · Noć vještica</h3>
-          <p>Aprende croata en Halloween. Para niños que hablan español.</p>
-          <div class="price"><b class="p-now">$5</b><s class="p-old">$7</s><small class="p-note">Lanzamiento hasta el 17 de octubre</small></div>
-          <a class="btn primary" href="https://payhip.com/b/mQasW" target="_blank" rel="noopener">Comprar en Payhip</a>
-        </div>
-        <div class="book">
-          <img src="rubia/payhip-en/1-cover.jpg" alt="Cover of the Rubia Halloween ebook, Croatian for kids in English" width="1600" height="901" loading="lazy">
-          <span class="lang">🇬🇧 In English</span>
-          <h3>Rubia · Halloween</h3>
-          <p>Croatian for kids who speak English.</p>
-          <div class="price"><b class="p-now">$5</b><s class="p-old">$7</s><small class="p-note">Launch price until October 17</small></div>
-          <a class="btn primary" href="https://payhip.com/b/qMg4D" target="_blank" rel="noopener">Buy on Payhip</a>
-        </div>
-      </div>
-      <p class="books-note">Pago seguro en Payhip. Recibes el libro al instante en tu correo. <a href="/libros/croata-para-ninos/" style="color:var(--red);font-weight:600">Ver el libro por dentro →</a></p>
-    </div>
-  </section>
 
   <section class="block videos" id="videos" aria-roledescription="carrusel" aria-label="Últimos videos">
     <div class="wrap">
@@ -352,6 +392,12 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         </div>
       </div>
       <div class="track" id="vtrack" tabindex="0">
+          <a class="vcard ebook" href="https://payhip.com/b/n4NZg" target="_blank" rel="noopener">
+            <span class="thumb"><img src="rubia/payhip-zv/1-portada.jpg" alt="Ebook Los animales en croata con Rubia" loading="lazy"></span>
+            <span class="badge">📘 Ebook nuevo · $7</span>
+            <span class="vtitle">Croata para niños con Rubia: Los animales 🐾 (en español)</span>
+            <span class="vlink">Comprar en Payhip →</span>
+          </a>
           <a class="vcard ebook" href="https://payhip.com/b/mQasW" target="_blank" rel="noopener">
             <span class="thumb"><img src="rubia/payhip/1-portada.jpg" alt="Ebook Rubia Halloween, croata para niños" loading="lazy"></span>
             <span class="badge">📘 Ebook nuevo · <span class="p-now">$5</span></span>
