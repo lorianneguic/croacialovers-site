@@ -1,0 +1,29 @@
+{
+ "name": "Rubia: 12 animales",
+ "short_name": "Rubia 12",
+ "lang": "es",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#fff0d7",
+ "theme_color": "#ffe2a4",
+ "description": "Aprende animales en croata con la gatita Rubia",
+ "icons": [
+  {
+   "src": "icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
