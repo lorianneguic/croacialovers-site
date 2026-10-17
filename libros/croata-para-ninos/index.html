@@ -147,7 +147,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <span class="eyebrow">Libro digital para niños</span>
       <h1>Croata para niños con Rubia: <em>Halloween</em> 🎃</h1>
       <p class="lead">Tu hijo aprende 12 palabras de Halloween en croata junto a Rubia, una gatita tierna y curiosa. Cada página tiene audio para escuchar cómo se dice. Ideal para familias con raíces croatas.</p>
-      <div class="price"><b class="p-now">$5</b><s class="p-old">$7</s><small class="p-note">Precio de lanzamiento hasta el 17 de octubre</small></div>
+      <div class="price"><b class="p-now">$5</b><s class="p-old">$7</s><small class="p-note">Precio de lanzamiento hasta el 31 de octubre</small></div>
       <div class="ctas">
         <a class="btn primary" href="https://payhip.com/b/mQasW" target="_blank" rel="noopener">Comprar en español</a>
         <a class="btn ghost" href="https://payhip.com/b/qMg4D" target="_blank" rel="noopener">English version</a>
@@ -215,7 +215,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <section class="block soft final">
     <div class="wrap">
       <h2>Que tu hijo diga sus primeras palabras en croata. 💛</h2>
-      <div class="price" style="justify-content:center"><b class="p-now">$5</b><s class="p-old">$7</s><small class="p-note">Hasta el 17 de octubre</small></div>
+      <div class="price" style="justify-content:center"><b class="p-now">$5</b><s class="p-old">$7</s><small class="p-note">Hasta el 31 de octubre</small></div>
       <div class="ctas"><a class="btn primary" href="https://payhip.com/b/mQasW" target="_blank" rel="noopener">Comprar el libro</a></div>
       <p class="note">Creado por Lory Guic, de Croacia Lovers, que estudió lengua croata en la Universidad de Split.</p>
     </div>
@@ -230,9 +230,9 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   </div>
 </footer>
 <script>
-// Después del 17 de octubre (hora Chile) se muestra solo el precio normal $7
+// Después del 31 de octubre (hora Chile) se muestra solo el precio normal $7
 (function () {
-  if (Date.now() < Date.parse('2026-10-18T00:00:00-03:00')) return;
+  if (Date.now() < Date.parse('2026-11-01T00:00:00-03:00')) return;
   document.querySelectorAll('.p-now').forEach(function (e) { e.textContent = '$7'; });
   document.querySelectorAll('.p-old, .p-note').forEach(function (e) { e.remove(); });
 })();
