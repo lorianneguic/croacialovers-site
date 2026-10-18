@@ -37,6 +37,13 @@ h1 { font-size:clamp(1.9rem, 6vw, 2.8rem); line-height:1.1; margin:.2em 0 .3em; 
 .soon { opacity:.7; }
 .book { border-radius:22px; background:linear-gradient(135deg,#fff3c4,#ffd6b8); padding:22px; margin-bottom:40px; }
 .book h2 { margin:0 0 6px; }
+.tabs { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 6px; }
+.tabs a { text-decoration:none; font-weight:800; border-radius:99px; padding:9px 16px; background:var(--chip); color:var(--red); }
+.sec { margin-top:34px; scroll-margin-top:16px; }
+.sec h2.title { font-size:clamp(1.5rem, 4.5vw, 2rem); margin:0 0 4px; }
+.sec .sub { color:var(--soft); margin:0; }
+.grid.wide { grid-template-columns:repeat(auto-fill, minmax(min(100%, 260px), 1fr)); }
+.grid.wide .card img { aspect-ratio:4/3; }
 footer { border-top:1px solid var(--line); padding-block:22px; color:var(--soft); font-size:.9rem; text-align:center; }
 @media (max-width:560px) { nav { display:none; } }
 </style>
@@ -47,34 +54,62 @@ footer { border-top:1px solid var(--line); padding-block:22px; color:var(--soft)
   <nav><a href="/">Inicio</a> · <a href="/libros/croata-para-ninos/">Libros</a></nav>
 </header>
 <main class="wrap">
-  <span class="eyebrow">Gratis · Sin anuncios</span>
+  <span class="eyebrow">Gratis · En el celular</span>
   <h1>Juegos para aprender croata 🎮🇭🇷</h1>
-  <p class="lead">Escucha cómo se dicen las palabras en croata, juega y gana estrellas con la gatita Rubia. Funcionan en el celular, sin descargar nada.</p>
+  <p class="lead">Escucha cómo se dicen las palabras en croata, juega y aprende. Funcionan en el celular, sin descargar nada.</p>
+  <nav class="tabs" aria-label="Tipos de juegos"><a href="#ninos">🧸 Para niños</a><a href="#adultos">🧑 Para adultos</a></nav>
 
-  <div class="grid">
-    <a class="card" href="/juegos/rubia-animales/">
-      <img src="/juegos/img/rubia-animales-9x16.webp" alt="Rubia la gatita con sus amigos el perrito y el pajarito" width="720" height="1280" loading="lazy">
-      <div class="in">
-        <span class="chip">Niños 6 a 8 años</span><span class="chip">Con audio</span>
-        <h2>Animales en croata con Rubia</h2>
-        <p>Aprende mačka, pas, zeko y riba. Después juega al quiz de escuchar y al memorice.</p>
-        <span class="btn">Jugar gratis →</span>
-      </div>
-    </a>
-    <div class="card soon">
-      <img src="/juegos/img/rubia-halloween-9x16.webp" alt="Rubia la gatita disfrazada de bruja para Halloween" width="720" height="1280" loading="lazy">
-      <div class="in">
-        <span class="chip">Próximamente</span>
-        <h2>Halloween en croata</h2>
-        <p>Bundeva, duh y más palabras de Halloween para jugar con Rubia.</p>
+  <section class="sec" id="ninos">
+    <h2 class="title">🧸 Juegos para niños</h2>
+    <p class="sub">Con la gatita Rubia, para niños de 6 a 8 años. Sin anuncios.</p>
+    <div class="grid">
+      <a class="card" href="/juegos/rubia-animales/">
+        <img src="/juegos/img/rubia-animales-9x16.webp" alt="Rubia la gatita con sus amigos el perrito y el pajarito" width="720" height="1280" loading="lazy">
+        <div class="in">
+          <span class="chip">Niños 6 a 8 años</span><span class="chip">Con audio</span>
+          <h2>Animales en croata con Rubia</h2>
+          <p>Aprende mačka, pas, zeko y riba. Después juega al quiz de escuchar y al memorice.</p>
+          <span class="btn">Jugar gratis →</span>
+        </div>
+      </a>
+      <div class="card soon">
+        <img src="/juegos/img/rubia-halloween-9x16.webp" alt="Rubia la gatita disfrazada de bruja para Halloween" width="720" height="1280" loading="lazy">
+        <div class="in">
+          <span class="chip">Próximamente</span>
+          <h2>Halloween en croata</h2>
+          <p>Bundeva, duh y más palabras de Halloween para jugar con Rubia.</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <section class="book">
-    <h2>📘 ¿Te gustó jugar con Rubia?</h2>
-    <p>En el libro “Los animales” hay 12 animales con audio en cada página, diploma y cuaderno de actividades de regalo.</p>
-    <a class="btn" href="https://payhip.com/b/n4NZg" target="_blank" rel="noopener">Ver el libro →</a>
+    <div class="book">
+      <h2>📘 ¿Te gustó jugar con Rubia?</h2>
+      <p>En el libro “Los animales” hay 12 animales con audio en cada página, diploma, cuaderno de actividades y la app completa de regalo.</p>
+      <a class="btn" href="https://payhip.com/b/n4NZg" target="_blank" rel="noopener">Ver el libro →</a>
+    </div>
+  </section>
+
+  <section class="sec" id="adultos">
+    <h2 class="title">🧑 Juegos para adultos</h2>
+    <p class="sub">Para practicar el croata que vas a usar de verdad: en viajes, con tu familia y en el día a día.</p>
+    <div class="grid wide">
+      <div class="card soon">
+        <img src="/img/split/riva-aerea.jpg" alt="Vista aérea de la Riva de Split" width="1600" height="1066" loading="lazy">
+        <div class="in">
+          <span class="chip">Próximamente</span>
+          <h2>¿Sobrevivirías en Croacia?</h2>
+          <p>Elige la frase correcta en el café, el ferry y el supermercado.</p>
+        </div>
+      </div>
+      <div class="card soon">
+        <img src="/img/split/peristilo.jpg" alt="El Peristilo del Palacio de Diocleciano en Split" width="1600" height="1066" loading="lazy">
+        <div class="in">
+          <span class="chip">Próximamente</span>
+          <h2>Pronunciación: č, ć, š, ž, đ</h2>
+          <p>Escucha y elige qué letra suena. El reto de todo hispanohablante.</p>
+        </div>
+      </div>
+    </div>
   </section>
 </main>
 <footer class="wrap">Croacia Lovers · Aprende croata en español · <a href="/">croacialovers.com</a></footer>
