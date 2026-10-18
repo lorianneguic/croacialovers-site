@@ -26,9 +26,9 @@ nav a { color:var(--soft); }
 .eyebrow { font-weight:700; font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; color:var(--red); }
 h1 { font-size:clamp(1.9rem, 6vw, 2.8rem); line-height:1.1; margin:.2em 0 .3em; }
 .lead { color:var(--soft); font-size:1.1rem; max-width:40rem; }
-.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:18px; margin:28px 0 40px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 220px), 300px)); gap:18px; margin:28px 0 40px; }
 .card { display:flex; flex-direction:column; border:1px solid var(--line); border-radius:22px; overflow:hidden; background:var(--paper); text-decoration:none; color:inherit; }
-.card img { width:100%; aspect-ratio:16/9; object-fit:cover; background:#ffe9c7; }
+.card img { display:block; width:100%; height:auto; aspect-ratio:9/16; object-fit:cover; background:#ffe9c7; }
 .card .in { padding:16px 18px 20px; }
 .card h2 { font-size:1.3rem; margin:0 0 6px; }
 .card p { margin:0 0 12px; color:var(--soft); }
@@ -53,7 +53,7 @@ footer { border-top:1px solid var(--line); padding-block:22px; color:var(--soft)
 
   <div class="grid">
     <a class="card" href="/juegos/rubia-animales/">
-      <img src="/rubia/payhip-zv/2-muestra-macka.jpg" alt="Rubia y la palabra mačka, gata en croata" width="1600" height="900">
+      <img src="/juegos/img/rubia-animales-9x16.webp" alt="Rubia la gatita con sus amigos el perrito y el pajarito" width="720" height="1280" loading="lazy">
       <div class="in">
         <span class="chip">Niños 6 a 8 años</span><span class="chip">Con audio</span>
         <h2>Animales en croata con Rubia</h2>
@@ -62,7 +62,7 @@ footer { border-top:1px solid var(--line); padding-block:22px; color:var(--soft)
       </div>
     </a>
     <div class="card soon">
-      <img src="/rubia/payhip/2-muestra-bundeva.jpg" alt="Rubia y la palabra bundeva, calabaza en croata" width="1600" height="900">
+      <img src="/juegos/img/rubia-halloween-9x16.webp" alt="Rubia la gatita disfrazada de bruja para Halloween" width="720" height="1280" loading="lazy">
       <div class="in">
         <span class="chip">Próximamente</span>
         <h2>Halloween en croata</h2>
