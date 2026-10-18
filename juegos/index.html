@@ -38,6 +38,7 @@ h1 { font-size:clamp(1.9rem, 6vw, 2.8rem); line-height:1.1; margin:.2em 0 .3em; 
 .book { border-radius:22px; background:linear-gradient(135deg,#fff3c4,#ffd6b8); padding:22px; margin-bottom:40px; }
 .book h2 { margin:0 0 6px; }
 .tabs { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 6px; }
+.tabs a.on { background:var(--red); color:#fff; }
 .tabs a { text-decoration:none; font-weight:800; border-radius:99px; padding:9px 16px; background:var(--chip); color:var(--red); }
 .sec { margin-top:34px; scroll-margin-top:16px; }
 .sec h2.title { font-size:clamp(1.5rem, 4.5vw, 2rem); margin:0 0 4px; }
@@ -51,13 +52,13 @@ footer { border-top:1px solid var(--line); padding-block:22px; color:var(--soft)
 <body>
 <header class="wrap">
   <a class="brand" href="/"><img src="/logo.png" alt="Logo de Croacia Lovers" width="40" height="40">Croacia Lovers</a>
-  <nav><a href="/">Inicio</a> · <a href="/libros/croata-para-ninos/">Libros</a></nav>
+  <nav><a href="/">Inicio</a> · <a href="/vocabulario/">Vocabulario</a> · <a href="/libros/croata-para-ninos/">Libros</a></nav>
 </header>
 <main class="wrap">
-  <span class="eyebrow">Gratis · En el celular</span>
+  <span class="eyebrow">Gratis · Sin anuncios · En el celular</span>
   <h1>Juegos para aprender croata 🎮🇭🇷</h1>
   <p class="lead">Escucha cómo se dicen las palabras en croata, juega y aprende. Funcionan en el celular, sin descargar nada.</p>
-  <nav class="tabs" aria-label="Tipos de juegos"><a href="#ninos">🧸 Juegos para niños</a><a href="#vocabulario">📚 Practica tu vocabulario</a></nav>
+  <nav class="tabs" aria-label="Secciones"><a class="on" href="/juegos/" aria-current="page">🧸 Juegos para niños</a><a href="/vocabulario/">📚 Practica tu vocabulario</a></nav>
 
   <section class="sec" id="ninos">
     <h2 class="title">🧸 Juegos para niños</h2>
@@ -94,29 +95,6 @@ footer { border-top:1px solid var(--line); padding-block:22px; color:var(--soft)
       <h2>📘 ¿Te gustó jugar con Rubia?</h2>
       <p>En el libro “Los animales” hay 12 animales con audio en cada página, diploma, cuaderno de actividades y la app completa de regalo.</p>
       <a class="btn" href="https://payhip.com/b/n4NZg" target="_blank" rel="noopener">Ver el libro →</a>
-    </div>
-  </section>
-
-  <section class="sec" id="vocabulario">
-    <h2 class="title">📚 Practica tu vocabulario</h2>
-    <p class="sub">Para practicar el croata que vas a usar de verdad: en viajes, con tu familia y en el día a día.</p>
-    <div class="grid wide">
-      <div class="card soon">
-        <img src="/img/split/riva-aerea.jpg" alt="Vista aérea de la Riva de Split" width="1600" height="1066" loading="lazy">
-        <div class="in">
-          <span class="chip">Próximamente</span>
-          <h2>¿Sobrevivirías en Croacia?</h2>
-          <p>Elige la frase correcta en el café, el ferry y el supermercado.</p>
-        </div>
-      </div>
-      <div class="card soon">
-        <img src="/img/split/peristilo.jpg" alt="El Peristilo del Palacio de Diocleciano en Split" width="1600" height="1066" loading="lazy">
-        <div class="in">
-          <span class="chip">Próximamente</span>
-          <h2>Pronunciación: č, ć, š, ž, đ</h2>
-          <p>Escucha y elige qué letra suena. El reto de todo hispanohablante.</p>
-        </div>
-      </div>
     </div>
   </section>
 </main>
