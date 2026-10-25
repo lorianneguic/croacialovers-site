@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Croacia Lovers">
 <meta property="og:title" content="Preséntate en croata: juego gratis con audio">
 <meta property="og:description" content="Zovem se… Drago mi je! Aprende a presentarte en croata jugando.">
-<meta property="og:image" content="https://croacialovers.com/vocabulario/img/lory-libro-9x16.webp">
+<meta property="og:image" content="https://croacialovers.com/vocabulario/presentate-en-croata/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -50,6 +50,7 @@ h1,h2,h3 { font-family:var(--display); line-height:1.08; margin:0; letter-spacin
 .hero { background:var(--red); color:#fff; border-radius:24px; padding:22px 20px 20px; position:relative; overflow:hidden;
   background-image: conic-gradient(from 0deg, #c8102e 0 25%, #b40e29 0 50%, #c8102e 0 75%, #b40e29 0); background-size:44px 44px; }
 .hero .eyebrow { color:var(--gold); }
+.hero-img { display:block; width:calc(100% + 40px); margin:-22px -20px 16px; height:auto; aspect-ratio:1/1; object-fit:cover; object-position:center 30%; max-height:340px; }
 .hero h1 { font-size:clamp(1.9rem, 8vw, 2.5rem); margin:6px 0 8px; }
 .hero p { margin:0; color:#ffe9ec; }
 .bubble { display:inline-block; background:#fff; color:var(--ink); font-family:var(--display); font-weight:800; padding:8px 14px; border-radius:18px 18px 18px 4px; margin-top:14px; box-shadow:0 6px 16px -8px rgba(0,0,0,.5); }
@@ -224,6 +225,7 @@ function go(id){
 function home(){
   view.innerHTML = `
     <section class="hero">
+      <img class="hero-img" src="img-lory-split.webp" alt="Lory de Croacia Lovers saludando en la Riva de Split" width="900" height="900">
       <span class="eyebrow">Gratis · con audio · nivel inicial</span>
       <h1>Preséntate en croata 🇭🇷</h1>
       <p>Aprende a decir tu nombre, de dónde eres y que tu familia es de Croacia. Después, ¡practica conversando!</p>
