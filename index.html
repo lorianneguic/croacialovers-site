@@ -300,7 +300,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 .gband h2 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -.03em; margin: 8px 0 10px; }
 .gband h2 .spark { display: inline-block; animation: wiggle 2.4s ease-in-out infinite; }
 .play-head p { margin: 0; max-width: 40rem; font-size: 1.1rem; color: #ffe9ec; }
-.play-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 26px; }
+.play-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 26px; }
 .game {
   position: relative; display: flex; flex-direction: column; background: #fff; color: var(--ink);
   border-radius: 20px; overflow: hidden; text-decoration: none; min-width: 0;
@@ -311,7 +311,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 .game img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; background: #ffe9c7; }
 .game .tag { position: absolute; top: 10px; left: 10px; background: #ffd666; color: #2b1416; font-weight: 800; font-size: .78rem; padding: 4px 11px; border-radius: 999px; box-shadow: 0 3px 8px rgba(0,0,0,.25); }
 .game .tag.hot { background: #ff8a1f; color: #fff; }
-.game .in { padding: 14px 16px 16px; display: grid; gap: 6px; flex: 1; align-content: start; }
+.game .in { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
 .game h3 { font-size: 1.15rem; font-weight: 800; }
 .game p { margin: 0; font-size: .92rem; color: var(--ink-soft); }
 .game .go { margin-top: auto; padding-top: 6px; }
@@ -408,6 +408,15 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <div class="in">
             <h3>Halloween con Rubia</h3>
             <p>Bundeva, duh, pauk y maska. Para niños.</p>
+            <div class="go"><span>▶ Jugar</span></div>
+          </div>
+        </a>
+        <a class="game" href="/vocabulario/presentate-en-croata/">
+          <span class="tag hot">✨ Nuevo</span>
+          <img src="/vocabulario/img/presentate-9x16.webp" alt="Lory de Croacia Lovers saludando en la Riva de Split" width="720" height="1280" loading="lazy">
+          <div class="in">
+            <h3>Preséntate en croata</h3>
+            <p>Zovem se, Drago mi je… y conversa con Marko.</p>
             <div class="go"><span>▶ Jugar</span></div>
           </div>
         </a>
