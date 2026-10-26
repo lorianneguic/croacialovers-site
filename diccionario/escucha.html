@@ -55,7 +55,7 @@ const esc = s => String(s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;',
 const safe = s => /^[a-z0-9-]+$/.test(s||'');
 let src = '', head = '';
 if (safe(q.get('l'))) {
-  src = 'abc/slovo-' + q.get('l') + '.mp3';
+  src = 'abc/slovo-' + q.get('l') + '.mp3?v=2';
   head = `<div class="letter">${esc(q.get('L'))}</div><div class="name">se dice: <b>${esc(q.get('n'))}</b></div><div class="word" lang="hr" style="font-size:2.2rem;margin-top:10px">${esc(q.get('w'))}</div><div class="es">${esc(q.get('e'))}</div>`;
 } else if (safe(q.get('a'))) {
   src = 'audio/' + q.get('a') + '.mp3';
