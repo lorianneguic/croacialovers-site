@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>¿Sobrevivirías en Croacia? Croata para viajeros · Croacia Lovers</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<meta name="theme-color" content="#c8102e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red:#c8102e; --ink:#2b1416; --soft:#6b4f52; --line:#f1d9dc; --chip:#fde8eb; --paper:#fff7f7;
+  --gold:#ffd666; --ok:#1f9d55; --bad:#d64545; --sea:#0e6aa8;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+  color-scheme: light;
+}
+* { box-sizing:border-box; }
+html,body { margin:0; }
+body { background:#fff; color:var(--ink); font-family:var(--body); font-size:1.05rem; line-height:1.5; -webkit-tap-highlight-color:transparent; }
+button { font:inherit; color:inherit; cursor:pointer; }
+.app { max-width:34rem; margin:0 auto; min-height:100dvh; display:flex; flex-direction:column; }
+.demo { background:var(--gold); text-align:center; font-weight:700; font-size:.85rem; padding:6px 12px; }
+.bar { display:flex; align-items:center; gap:10px; padding:14px 16px; }
+.bar a.brand { display:flex; align-items:center; gap:8px; text-decoration:none; color:inherit; font-family:var(--display); font-weight:800; }
+.bar img { border-radius:50%; }
+.bar .sp { flex:1; }
+.stars { font-weight:700; background:var(--chip); color:var(--red); padding:4px 12px; border-radius:99px; font-size:.95rem; }
+.back { border:0; background:var(--chip); color:var(--red); font-weight:800; border-radius:99px; padding:6px 14px; }
+main { flex:1; padding:4px 16px 28px; }
+h1,h2,h3 { font-family:var(--display); line-height:1.08; margin:0; letter-spacing:-.02em; }
+.eyebrow { font-family:var(--display); font-weight:700; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--red); }
+.center { text-align:center; }
+
+/* portada */
+.hero { border-radius:24px; overflow:hidden; background:var(--red); color:#fff;
+  background-image: conic-gradient(from 0deg, #c8102e 0 25%, #b40e29 0 50%, #c8102e 0 75%, #b40e29 0); background-size:44px 44px; }
+.hero img { display:block; width:100%; height:auto; aspect-ratio:16/11; object-fit:cover; object-position:center 35%; }
+.hero .in { padding:18px 20px 20px; }
+.hero .eyebrow { color:var(--gold); }
+.hero h1 { font-size:clamp(1.8rem, 8vw, 2.4rem); margin:6px 0 8px; }
+.hero p { margin:0; color:#ffe9ec; }
+.worlds { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:18px; }
+.world { position:relative; border:2px solid var(--line); background:#fff; border-radius:18px; padding:14px 12px; text-align:left; display:grid; gap:4px; transition:transform .15s, border-color .15s; }
+.world:hover:not([disabled]) { transform:translateY(-2px); border-color:var(--red); }
+.world .ic { font-size:1.8rem; }
+.world b { font-family:var(--display); font-size:1.05rem; line-height:1.15; }
+.world small { color:var(--soft); font-size:.85rem; }
+.world[disabled] { opacity:.55; cursor:default; }
+.world .lock { position:absolute; top:10px; right:10px; font-size:.72rem; font-weight:800; background:var(--chip); color:var(--red); padding:2px 8px; border-radius:99px; }
+.world .ok { position:absolute; top:10px; right:10px; }
+.world.open { border-color:var(--red); background:var(--paper); }
+
+/* menú de un mundo */
+.whead { display:flex; align-items:center; gap:14px; margin-bottom:14px; }
+.whead .ic { font-size:2.4rem; width:64px; height:64px; display:grid; place-items:center; background:var(--chip); border-radius:18px; }
+.whead h2 { font-size:1.6rem; }
+.whead p { margin:2px 0 0; color:var(--soft); }
+.steps { display:grid; gap:10px; }
+.mbtn { display:flex; align-items:center; gap:14px; text-align:left; border:2px solid var(--line); background:#fff; border-radius:18px; padding:12px 14px; transition:transform .15s, border-color .15s; }
+.mbtn:hover { transform:translateY(-2px); border-color:var(--red); }
+.mbtn .ic { font-size:1.6rem; width:48px; height:48px; display:grid; place-items:center; background:var(--chip); border-radius:14px; flex:none; }
+.mbtn b { display:block; font-family:var(--display); font-size:1.08rem; }
+.mbtn small { color:var(--soft); font-size:.9rem; }
+.mbtn .done { margin-left:auto; font-size:1.2rem; }
+.part { font-family:var(--display); font-weight:800; color:var(--soft); font-size:.9rem; margin:14px 0 2px; }
+
+/* tarjetas */
+.prog { height:8px; background:var(--chip); border-radius:99px; overflow:hidden; margin:2px 0 14px; }
+.prog i { display:block; height:100%; background:var(--red); border-radius:99px; transition:width .3s; }
+.card { background:var(--paper); border:2px solid var(--line); border-radius:22px; overflow:hidden; text-align:center; }
+.pic { display:block; width:100%; height:auto; aspect-ratio:1; object-fit:cover; background:#ffe9c7; }
+.emo { display:grid; place-items:center; aspect-ratio:1; font-size:7rem; background:linear-gradient(135deg,#fff3c4,#ffd6b8); }
+.card .in { padding:14px 16px 18px; position:relative; }
+.hr { font-family:var(--display); font-weight:800; font-size:clamp(1.7rem, 7.5vw, 2.3rem); color:var(--red); }
+.es { color:var(--soft); font-size:1.1rem; }
+.tip { margin-top:10px; font-size:.92rem; background:#fff; border-radius:12px; padding:8px 12px; display:inline-block; border:1px dashed var(--line); }
+.spk { width:64px; height:64px; border-radius:50%; border:0; background:var(--red); color:#fff; font-size:1.7rem; box-shadow:0 10px 24px -10px rgba(200,16,46,.7); }
+.card .spk { position:absolute; right:14px; top:-32px; }
+.spk.playing { animation:pop .5s ease; }
+.big { display:inline-flex; align-items:center; justify-content:center; gap:8px; border:0; background:var(--red); color:#fff; font-weight:800; border-radius:99px; padding:13px 22px; font-size:1.05rem; text-decoration:none; }
+.big.ghost { background:#fff; color:var(--red); border:2px solid var(--red); }
+.big[disabled] { opacity:.4; }
+.row { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:16px; }
+.q { font-family:var(--display); font-weight:800; font-size:1.3rem; text-align:center; margin:4px 0 12px; }
+.fb { min-height:1.6em; text-align:center; font-weight:700; margin-top:12px; }
+.fb.ok { color:var(--ok); } .fb.bad { color:var(--bad); }
+
+/* escucha y elige (imágenes) */
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px; }
+.imgopt { border:3px solid var(--line); border-radius:18px; overflow:hidden; padding:0; background:#fff; transition:border-color .15s, transform .15s; }
+.imgopt:hover { border-color:var(--red); }
+.imgopt .emo { font-size:4rem; }
+.imgopt.ok { border-color:var(--ok); box-shadow:0 0 0 4px #c9f0d8; }
+.imgopt.bad { border-color:var(--bad); animation:shake .35s; opacity:.7; }
+
+/* memorice */
+.mem { display:grid; grid-template-columns:repeat(4, 1fr); gap:8px; }
+.mc { aspect-ratio:3/4; border:0; border-radius:14px; padding:0; position:relative; perspective:600px; background:none; }
+.mc .f, .mc .b { position:absolute; inset:0; border-radius:14px; backface-visibility:hidden; transition:transform .4s; display:grid; place-items:center; overflow:hidden; }
+.mc .b { background:var(--red); background-image: conic-gradient(from 0deg, #c8102e 0 25%, #b40e29 0 50%, #c8102e 0 75%, #b40e29 0); background-size:22px 22px; color:#fff; font-size:1.6rem; }
+.mc .f { transform:rotateY(180deg); background:#fff; border:2px solid var(--line); }
+.mc .f img { width:100%; height:100%; object-fit:cover; }
+.mc .f .emo { width:100%; height:100%; aspect-ratio:auto; font-size:2.4rem; }
+.mc .f span.w { font-family:var(--display); font-weight:800; color:var(--red); font-size:clamp(.8rem, 3.6vw, 1.05rem); padding:4px; text-align:center; line-height:1.1; }
+.mc.up .f { transform:rotateY(0); } .mc.up .b { transform:rotateY(-180deg); }
+.mc.done .f { border-color:var(--ok); box-shadow:0 0 0 3px #c9f0d8 inset; }
+
+/* armar frase */
+.slot { min-height:62px; border:2px dashed var(--line); border-radius:16px; padding:10px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center; background:var(--paper); }
+.tiles { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:14px; }
+.tile { background:#fff; border:2px solid var(--red); color:var(--red); font-weight:800; border-radius:12px; padding:9px 14px; font-size:1.1rem; }
+.slot .tile { background:var(--red); color:#fff; }
+.slot.ok { border-color:var(--ok); background:#e7f7ee; }
+.slot.bad { border-color:var(--bad); animation:shake .35s; }
+.phr { display:flex; gap:12px; align-items:center; border:2px solid var(--line); border-radius:16px; padding:10px 12px; margin-top:10px; background:#fff; }
+.phr button { border:0; background:var(--chip); color:var(--red); border-radius:50%; width:42px; height:42px; flex:none; font-size:1.1rem; }
+.phr b { color:var(--red); font-family:var(--display); font-size:1.2rem; display:block; }
+.phr small { color:var(--soft); }
+
+.end { text-align:center; }
+.end .medal { font-size:4rem; animation:pop .6s ease; }
+.cta { margin-top:20px; background:linear-gradient(135deg,#fff3c4,#ffd6b8); border-radius:20px; padding:18px; text-align:center; }
+.cta p { margin:6px 0 12px; color:var(--soft); }
+footer { text-align:center; color:var(--soft); font-size:.85rem; padding:16px; border-top:1px solid var(--line); }
+footer a { color:var(--red); }
+.hide { display:none !important; }
+@keyframes pop { 0%{transform:scale(.6)} 60%{transform:scale(1.12)} 100%{transform:scale(1)} }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+.confetti { position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:9; }
+.confetti i { position:absolute; top:-12px; width:10px; height:14px; border-radius:2px; animation:fall 1.6s ease-in forwards; }
+@keyframes fall { to { transform:translateY(105vh) rotate(540deg); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation:none !important; transition:none !important; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="demo">🛠️ Versión de prueba: solo el mundo "Palabras mágicas" está listo</div>
+  <div class="bar">
+    <a class="brand" href="/"><img src="/logo.png" alt="Logo de Croacia Lovers" width="36" height="36">Croacia Lovers</a>
+    <span class="sp"></span>
+    <button class="back hide" id="back" type="button">← Volver</button>
+    <span class="stars" id="stars" aria-label="Estrellas">⭐ 0</span>
+  </div>
+  <main id="view" aria-live="polite"></main>
+  <footer>Croacia Lovers · Aprende croata en español · <a href="/vocabulario/">Más juegos</a></footer>
+</div>
+
+<script>
+/* img: archivo en img/ ; emo: emoji provisorio mientras no hay imagen */
+const WORLDS = [
+  { id:'magicas', ic:'✨', t:'Palabras mágicas', s:'Gracias, por favor, ¡salud!',
+    words:[
+      {a:'hvala', hr:'Hvala', es:'Gracias', img:'hvala', tip:'Hvala lijepa = muchas gracias'},
+      {a:'molim', hr:'Molim', es:'Por favor', img:'molim', tip:'También es "de nada" y "¿perdón?, ¿cómo?"'},
+      {a:'izvolite', hr:'Izvolite', es:'Aquí tiene / Adelante', img:'izvolite', tip:'Lo dice el mozo al servirte'},
+      {a:'dobrodosli', hr:'Dobrodošli', es:'Bienvenidos', img:'dobrodosli', tip:'A un hombre: dobrodošao · a una mujer: dobrodošla'},
+      {a:'zivjeli', hr:'Živjeli!', es:'¡Salud!', img:'zivjeli', tip:'Se dice mirando a los ojos al brindar 🥂'},
+      {a:'oprostite', hr:'Oprostite', es:'Disculpe / Perdón', img:'oprostite', tip:'Para pedir permiso o llamar al mozo'},
+      {a:'uzivajte', hr:'Uživajte!', es:'¡Disfruten!', img:'uzivaj', tip:'A una sola persona: Uživaj!'},
+      {a:'da', hr:'Da', es:'Sí', emo:'👍', tip:'Corto y fácil'},
+      {a:'ne', hr:'Ne', es:'No', emo:'🙅‍♀️', tip:'Ne, hvala = No, gracias'},
+      {a:'dobar-tek', hr:'Dobar tek!', es:'¡Buen provecho!', emo:'🍝', tip:'Antes de empezar a comer'}
+    ],
+    phrases:[
+      {a:'f-hvala-lijepa', hr:'Hvala lijepa!', es:'¡Muchas gracias!'},
+      {a:'f-dobrodosli-u-hrvatsku', hr:'Dobrodošli u Hrvatsku!', es:'¡Bienvenidos a Croacia!'},
+      {a:'f-uzivajte-u-hrvatskoj', hr:'Uživajte u Hrvatskoj!', es:'¡Disfruten de Croacia!'}
+    ]},
+  { id:'aeropuerto', ic:'✈️', t:'Aeropuerto', s:'Pasaporte, llegadas, salidas' },
+  { id:'lugares', ic:'🗺️', t:'Lugares por visitar', s:'Islas, castillos, fortalezas' },
+  { id:'cafe', ic:'☕', t:'En el café', s:'Café con leche, helado' },
+  { id:'ferry', ic:'⛴️', t:'Ferry y bus', s:'Pasaje a Hvar' },
+  { id:'mercado', ic:'🛒', t:'Mercado', s:'Queso, pršut, aceite' },
+  { id:'alojamiento', ic:'🏨', t:'Alojamiento', s:'Llave, desayuno, wifi' },
+  { id:'ayuda', ic:'🆘', t:'Si necesitas ayuda', s:'Médico, farmacia' }
+];
+
+const $ = s => document.querySelector(s);
+const view=$('#view'), backBtn=$('#back'), starsEl=$('#stars');
+const store={ get(k,d){ try{const v=localStorage.getItem('cl-viaje-'+k); return v===null?d:JSON.parse(v);}catch(e){return d;} },
+              set(k,v){ try{localStorage.setItem('cl-viaje-'+k, JSON.stringify(v));}catch(e){} } };
+let stars=store.get('stars',0), done=store.get('done',{});
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pic=(w,cls='pic')=> w.img ? `<img class="${cls}" src="img/${w.img}.webp" alt="${esc(w.es)}" width="640" height="640">` : `<div class="emo" aria-label="${esc(w.es)}">${w.emo}</div>`;
+let player=new Audio();
+function play(slug,btn){ try{ player.pause(); player=new Audio('audio/'+slug+'.mp3'); player.play().catch(()=>{}); }catch(e){} if(btn){btn.classList.remove('playing'); void btn.offsetWidth; btn.classList.add('playing');} return player; }
+function sfx(ok){ try{ const a=new Audio('sfx/'+(ok?'acierto':'error')+'.mp3'); a.volume=.5; a.play().catch(()=>{}); }catch(e){} }
+function addStar(n=1){ stars+=n; store.set('stars',stars); starsEl.textContent='⭐ '+stars; }
+function mark(k){ done[k]=true; store.set('done',done); }
+function confetti(){ const c=document.createElement('div'); c.className='confetti'; const cols=['#c8102e','#ffd666','#1f9d55','#ff8a1f','#0e6aa8'];
+  for(let i=0;i<60;i++){const p=document.createElement('i'); p.style.left=Math.random()*100+'vw'; p.style.background=cols[i%5]; p.style.animationDelay=Math.random()*.6+'s'; c.appendChild(p);} document.body.appendChild(c); setTimeout(()=>c.remove(),2600); }
+starsEl.textContent='⭐ '+stars;
+
+let W=null, backTo=null;
+backBtn.onclick=()=>backTo&&backTo();
+function nav(fn, back){ backTo=back; backBtn.classList.toggle('hide',!back); window.scrollTo(0,0); fn(); }
+
+function home(){
+  nav(()=>{
+    view.innerHTML=`
+      <section class="hero">
+        <img src="img/uzivaj.webp" alt="Lory disfrutando con un jugo frente al mar en Croacia" width="640" height="640">
+        <div class="in">
+          <span class="eyebrow">Croata para viajeros · con audio</span>
+          <h1>¿Sobrevivirías en Croacia? 🧳</h1>
+          <p>8 mundos con las palabras y frases que vas a necesitar en tu viaje. Primero aprendes las palabras y después armas frases.</p>
+        </div>
+      </section>
+      <div class="worlds">${WORLDS.map((w,i)=>`
+        <button class="world ${w.words?'open':''}" type="button" data-i="${i}" ${w.words?'':'disabled'}>
+          ${w.words? (done[w.id+'-all']?'<span class="ok">✅</span>':'') : '<span class="lock">Pronto</span>'}
+          <span class="ic" aria-hidden="true">${w.ic}</span><b>${i+1}. ${esc(w.t)}</b><small>${esc(w.s)}</small>
+        </button>`).join('')}</div>`;
+    view.querySelectorAll('.world:not([disabled])').forEach(b=>b.onclick=()=>world(WORLDS[+b.dataset.i]));
+  }, null);
+}
+
+function world(w){
+  W=w;
+  const S=[
+    {k:'learn', ic:'📖', t:'Aprende las palabras', s:'Mira, escucha y repite', part:'Parte 1 · Palabras'},
+    {k:'listen', ic:'👂', t:'Escucha y elige', s:'Toca la imagen correcta'},
+    {k:'memory', ic:'🃏', t:'Memorice', s:'Junta la imagen con su palabra'},
+    {k:'phrases', ic:'💬', t:'Aprende las frases', s:'Frases con estas palabras', part:'Parte 2 · Frases'},
+    {k:'build', ic:'🧩', t:'Arma la frase', s:'Ordena las palabras en croata'}
+  ];
+  nav(()=>{
+    view.innerHTML=`
+      <div class="whead"><span class="ic" aria-hidden="true">${w.ic}</span><div><h2>${esc(w.t)}</h2><p>${w.words.length} palabras · ${w.phrases.length} frases</p></div></div>
+      <div class="steps">${S.map(s=>`${s.part?`<div class="part">${s.part}</div>`:''}
+        <button class="mbtn" type="button" data-k="${s.k}"><span class="ic" aria-hidden="true">${s.ic}</span><span><b>${s.t}</b><small>${s.s}</small></span><span class="done">${done[w.id+'-'+s.k]?'✅':''}</span></button>`).join('')}</div>`;
+    view.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>({learn,listen,memory,phrases,build}[b.dataset.k])());
+  }, home);
+}
+const toWorld=()=>world(W);
+
+function endScreen(k, msg, got){
+  mark(W.id+'-'+k); if(['learn','listen','memory','phrases','build'].every(x=>done[W.id+'-'+x])) mark(W.id+'-all');
+  confetti();
+  nav(()=>{
+    view.innerHTML=`<div class="end"><div class="medal" aria-hidden="true">🏅</div><h2 style="font-size:1.8rem;margin-top:6px">Bravo!</h2>
+      <p style="font-size:1.15rem">${esc(msg)} · +${got} ⭐</p>
+      <div class="row"><button class="big" id="w" type="button">Seguir en ${esc(W.t)} →</button></div></div>
+      <div class="cta"><b style="font-family:var(--display);font-size:1.15rem">▶️ ¿Quieres aprender más?</b><p>Mira las clases gratis de croata en español en YouTube.</p>
+      <a class="big" href="https://www.youtube.com/@croacia_lovers?sub_confirmation=1" target="_blank" rel="noopener">Ver clases en YouTube</a></div>`;
+    $('#w').onclick=toWorld;
+  }, toWorld);
+}
+
+function learn(){
+  const L=W.words; let i=0;
+  const draw=()=>{ const w=L[i];
+    nav(()=>{
+      view.innerHTML=`<div class="prog"><i style="width:${(i+1)/L.length*100}%"></i></div>
+        <div class="card">${pic(w)}<div class="in"><button class="spk" id="spk" type="button" aria-label="Escuchar">🔊</button>
+          <div class="hr" lang="hr">${esc(w.hr)}</div><div class="es">${esc(w.es)}</div><div class="tip">💡 ${esc(w.tip)}</div></div></div>
+        <div class="row"><button class="big ghost" id="p" type="button" ${i?'':'disabled'}>←</button><button class="big" id="n" type="button">${i===L.length-1?'¡Terminé! ✅':'Siguiente →'}</button></div>`;
+      const s=$('#spk'); s.onclick=()=>play(w.a,s); play(w.a,s);
+      $('#p').onclick=()=>{ if(i){i--;draw();} };
+      $('#n').onclick=()=>{ if(i<L.length-1){i++;draw();} else { addStar(3); endScreen('learn','¡Ya conoces las '+L.length+' palabras!',3); } };
+    }, toWorld);
+  }; draw();
+}
+
+function listen(){
+  const qs=shuffle(W.words); let i=0, score=0;
+  const draw=()=>{ const w=qs[i]; const opts=shuffle([w,...shuffle(W.words.filter(x=>x!==w)).slice(0,3)]);
+    nav(()=>{
+      view.innerHTML=`<div class="prog"><i style="width:${i/qs.length*100}%"></i></div>
+        <p class="q">Escucha y toca la imagen correcta</p>
+        <div class="center"><button class="spk" id="spk" type="button" aria-label="Escuchar otra vez">🔊</button></div>
+        <div class="grid2">${opts.map((o,k)=>`<button class="imgopt" type="button" data-k="${k}">${pic(o)}</button>`).join('')}</div>
+        <div class="fb" id="fb"></div>`;
+      const s=$('#spk'); s.onclick=()=>play(w.a,s); setTimeout(()=>play(w.a,s),200);
+      view.querySelectorAll('.imgopt').forEach(b=>b.onclick=()=>{
+        const ok=opts[+b.dataset.k]===w; view.querySelectorAll('.imgopt').forEach(x=>x.disabled=true);
+        b.classList.add(ok?'ok':'bad'); if(!ok) view.querySelectorAll('.imgopt')[opts.indexOf(w)].classList.add('ok'); sfx(ok);
+        $('#fb').className='fb '+(ok?'ok':'bad'); $('#fb').innerHTML= ok?`¡Sí! <span lang="hr">${esc(w.hr)}</span> = ${esc(w.es)} 🎉`:`Era: <span lang="hr">${esc(w.hr)}</span> = ${esc(w.es)}`;
+        if(ok){score++;addStar();}
+        setTimeout(()=>{ i++; if(i<qs.length) draw(); else endScreen('listen',`Acertaste ${score} de ${qs.length}`,score); }, ok?1200:2200);
+      });
+    }, toWorld);
+  }; draw();
+}
+
+function memory(){
+  const pick=shuffle(W.words).slice(0,6);
+  const cards=shuffle(pick.flatMap((w,k)=>[{k,t:'img',w},{k,t:'word',w}]));
+  let open=[], found=0, tries=0, lock=false;
+  nav(()=>{
+    view.innerHTML=`<p class="q">Junta cada imagen con su palabra 🃏</p>
+      <div class="mem">${cards.map((c,i)=>`<button class="mc" type="button" data-i="${i}" aria-label="Carta">
+        <span class="b" aria-hidden="true">🇭🇷</span><span class="f">${c.t==='img'?pic(c.w,''):`<span class="w" lang="hr">${esc(c.w.hr)}</span>`}</span></button>`).join('')}</div>
+      <p class="fb" id="fb">Intentos: 0</p>`;
+    view.querySelectorAll('.mc').forEach(b=>b.onclick=()=>{
+      const i=+b.dataset.i, c=cards[i];
+      if(lock||b.classList.contains('up')) return;
+      b.classList.add('up'); if(c.t==='word') play(c.w.a); open.push([b,c]);
+      if(open.length===2){
+        tries++; $('#fb').textContent='Intentos: '+tries; lock=true;
+        const [[b1,c1],[b2,c2]]=open; open=[];
+        if(c1.k===c2.k){ sfx(true); setTimeout(()=>{ play(c1.w.a); b1.classList.add('done'); b2.classList.add('done'); lock=false; found++; addStar();
+            if(found===pick.length) setTimeout(()=>endScreen('memory',`¡Lo lograste en ${tries} intentos!`,pick.length),900); },300); }
+        else setTimeout(()=>{ b1.classList.remove('up'); b2.classList.remove('up'); lock=false; },1000);
+      }
+    });
+  }, toWorld);
+}
+
+function phrases(){
+  nav(()=>{
+    view.innerHTML=`<p class="q">Frases con las palabras de este mundo</p>
+      ${W.phrases.map(p=>`<div class="phr"><button type="button" data-a="${p.a}" aria-label="Escuchar">🔊</button><span><b lang="hr">${esc(p.hr)}</b><small>${esc(p.es)}</small></span></div>`).join('')}
+      <p class="center" style="color:var(--soft);font-size:.92rem;margin-top:14px">Escucha cada frase y repítela en voz alta 🗣️</p>
+      <div class="row"><button class="big" id="n" type="button">¡Listo! Ahora a armarlas →</button></div>`;
+    view.querySelectorAll('.phr button').forEach(b=>b.onclick=()=>play(b.dataset.a,b));
+    $('#n').onclick=()=>{ mark(W.id+'-phrases'); addStar(2); build(); };
+  }, toWorld);
+}
+
+function build(){
+  const qs=shuffle(W.phrases); let i=0, score=0;
+  const draw=()=>{ const s=qs[i], words=s.hr.split(' '); let picked=[];
+    let pool=shuffle(words.map((w,k)=>({w,k}))); if(words.length>1 && pool.map(x=>x.w).join(' ')===s.hr) pool.reverse();
+    nav(()=>{
+      view.innerHTML=`<div class="prog"><i style="width:${i/qs.length*100}%"></i></div>
+        <p class="q">Arma en croata:<br><span style="color:var(--red)">“${esc(s.es)}”</span></p>
+        <div class="slot" id="slot"></div><div class="tiles" id="tiles"></div><div class="fb" id="fb"></div>
+        <div class="row"><button class="big ghost" id="clr" type="button">Borrar</button><button class="big" id="chk" type="button">Revisar ✔</button></div>`;
+      const slot=$('#slot'), tiles=$('#tiles');
+      const paint=()=>{
+        slot.innerHTML=picked.map((t,k)=>`<button class="tile" type="button" lang="hr" data-k="${k}">${esc(t.w)}</button>`).join('')||'<span style="color:var(--soft)">Toca las palabras en orden 👇</span>';
+        tiles.innerHTML=pool.filter(t=>!picked.includes(t)).map(t=>`<button class="tile" type="button" lang="hr" data-id="${t.k}">${esc(t.w)}</button>`).join('');
+        slot.querySelectorAll('.tile').forEach(b=>b.onclick=()=>{picked.splice(+b.dataset.k,1);paint();});
+        tiles.querySelectorAll('.tile').forEach(b=>b.onclick=()=>{picked.push(pool.find(t=>t.k===+b.dataset.id));paint();});
+      }; paint();
+      $('#clr').onclick=()=>{picked=[];slot.className='slot';paint();};
+      $('#chk').onclick=()=>{
+        if(picked.length<words.length){ $('#fb').className='fb bad'; $('#fb').textContent='Faltan palabras 🙂'; return; }
+        const ok=picked.map(t=>t.w).join(' ')===s.hr; slot.className='slot '+(ok?'ok':'bad'); sfx(ok);
+        $('#fb').className='fb '+(ok?'ok':'bad'); $('#fb').innerHTML=ok?'¡Perfecto! 🎉':`Era: <span lang="hr">${esc(s.hr)}</span>`;
+        if(ok){score++;addStar();} $('#chk').disabled=true; $('#clr').disabled=true; play(s.a);
+        setTimeout(()=>{ i++; if(i<qs.length) draw(); else endScreen('build',`Armaste ${score} de ${qs.length} frases`,score); },2300);
+      };
+    }, toWorld);
+  }; draw();
+}
+
+home();
+</script>
+</body>
+</html>
