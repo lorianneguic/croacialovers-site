@@ -46,7 +46,6 @@ footer a { color:var(--red); font-weight:700; }
   <button class="play" id="play" type="button" aria-label="Escuchar">🔊</button>
   <button class="again" id="again" type="button">↻ Escuchar otra vez</button>
   <p class="tip">Escucha y repite en voz alta 🗣️</p>
-  <button class="back" id="back" type="button">✕ Cerrar y volver al diccionario</button>
   <p class="how" id="how"><b>¿Cómo vuelvo al diccionario?</b><br>📱 <b>Android:</b> toca el botón <b>◁ atrás</b> del celular.<br>🍎 <b>iPhone:</b> toca <b>◀</b> arriba a la izquierda, al lado de la hora.<br>💻 <b>Computador:</b> cierra esta pestaña (✕) y verás tu PDF.</p>
 </main>
 <footer>¿Quieres seguir practicando? Juega gratis en <a href="/">croacialovers.com</a> · Vidimo se!</footer>
@@ -70,11 +69,7 @@ function play(){ if(!src) return; audio.currentTime = 0; btn.classList.add('on')
 audio.onended = () => btn.classList.remove('on');
 btn.onclick = play; document.getElementById('again').onclick = play;
 if (src) play();
-document.getElementById('back').onclick = () => {
-  if (history.length > 1) { history.back(); }
-  try { window.close(); } catch(e) {}
-  setTimeout(() => { const h=document.getElementById('how'); h.style.borderColor='#c8102e'; h.scrollIntoView({behavior:'smooth',block:'center'}); }, 400);
-};
+
 </script>
 </body>
 </html>
