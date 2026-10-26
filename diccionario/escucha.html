@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q53BDV115T"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q53BDV115T');</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Escucha la palabra · Diccionario croata-español · Croacia Lovers</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<meta name="theme-color" content="#c8102e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --red:#c8102e; --ink:#2b1416; --soft:#6b4f52; --gold:#ffd666; --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif; --body:"Figtree","Segoe UI",system-ui,sans-serif; color-scheme: light; }
+* { box-sizing:border-box; }
+html,body { margin:0; height:100%; }
+body { font-family:var(--body); color:var(--ink); background:#fff; display:flex; flex-direction:column; min-height:100dvh; }
+.top { background:var(--red); background-image:conic-gradient(from 0deg,#c8102e 0 25%,#b40e29 0 50%,#c8102e 0 75%,#b40e29 0); background-size:44px 44px; color:#fff; padding:14px 16px; display:flex; align-items:center; gap:10px; }
+.top img { border-radius:50%; background:#fff; }
+.top b { font-family:var(--display); font-size:1.1rem; }
+.top small { display:block; opacity:.9; font-size:.8rem; }
+main { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:28px 16px; gap:14px; }
+.letter { font-family:var(--display); font-weight:800; font-size:4.5rem; color:var(--red); line-height:1; }
+.name { color:var(--soft); font-size:1rem; }
+.word { font-family:var(--display); font-weight:800; font-size:clamp(2.4rem, 12vw, 3.8rem); color:var(--red); line-height:1.05; word-break:break-word; }
+.es { font-size:1.2rem; color:var(--soft); }
+.play { width:120px; height:120px; border-radius:50%; border:0; background:var(--red); color:#fff; font-size:3rem; box-shadow:0 16px 34px -12px rgba(200,16,46,.7); cursor:pointer; margin-top:6px; }
+.play.on { animation:pulse 1s ease infinite; }
+.again { border:2px solid var(--red); background:#fff; color:var(--red); font-weight:700; border-radius:99px; padding:10px 20px; font-size:1rem; cursor:pointer; }
+.tip { color:var(--soft); font-size:.92rem; max-width:22rem; }
+footer { text-align:center; font-size:.85rem; color:var(--soft); padding:14px 16px 22px; }
+footer a { color:var(--red); font-weight:700; }
+.err { color:var(--red); font-weight:700; }
+@keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.06)} }
+@media (prefers-reduced-motion: reduce) { .play.on { animation:none; } }
+</style>
+</head>
+<body>
+<div class="top"><img src="/logo.png" alt="Logo de Croacia Lovers" width="38" height="38"><div><b>Diccionario croata-español</b><small>Croacia Lovers · 2.000 palabras con audio</small></div></div>
+<main id="m">
+  <div id="head"></div>
+  <button class="play" id="play" type="button" aria-label="Escuchar">🔊</button>
+  <button class="again" id="again" type="button">↻ Escuchar otra vez</button>
+  <p class="tip">Escucha y repite en voz alta 🗣️</p>
+</main>
+<footer>¿Quieres seguir practicando? Juega gratis en <a href="/">croacialovers.com</a> · Vidimo se!</footer>
+<script>
+const q = new URLSearchParams(location.search);
+const esc = s => String(s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const safe = s => /^[a-z0-9-]+$/.test(s||'');
+let src = '', head = '';
+if (safe(q.get('l'))) {
+  src = 'abc/slovo-' + q.get('l') + '.mp3';
+  head = `<div class="letter">${esc(q.get('L'))}</div><div class="name">se dice: <b>${esc(q.get('n'))}</b></div><div class="word" lang="hr" style="font-size:2.2rem;margin-top:10px">${esc(q.get('w'))}</div><div class="es">${esc(q.get('e'))}</div>`;
+} else if (safe(q.get('a'))) {
+  src = 'audio/' + q.get('a') + '.mp3';
+  head = `<div class="word" lang="hr">${esc(q.get('w'))}</div><div class="es">${esc(q.get('e'))}</div>`;
+} else {
+  head = '<p class="err">No encontramos esta palabra.</p>';
+}
+document.getElementById('head').innerHTML = head;
+const audio = new Audio(src); const btn = document.getElementById('play');
+function play(){ if(!src) return; audio.currentTime = 0; btn.classList.add('on'); audio.play().catch(()=>btn.classList.remove('on')); try{ gtag('event','diccionario_audio',{palabra: q.get('a')||q.get('l')}); }catch(e){} }
+audio.onended = () => btn.classList.remove('on');
+btn.onclick = play; document.getElementById('again').onclick = play;
+if (src) play();
+</script>
+</body>
+</html>
