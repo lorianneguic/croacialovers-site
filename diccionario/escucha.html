@@ -32,6 +32,8 @@ main { flex:1; display:flex; flex-direction:column; align-items:center; justify-
 .tip { color:var(--soft); font-size:.92rem; max-width:22rem; }
 footer { text-align:center; font-size:.85rem; color:var(--soft); padding:14px 16px 22px; }
 footer a { color:var(--red); font-weight:700; }
+.back { border:0; background:var(--ink); color:#fff; font-weight:700; border-radius:99px; padding:12px 22px; font-size:1rem; cursor:pointer; margin-top:6px; }
+.how { background:#fff7f7; border:2px solid #f1d9dc; border-radius:16px; padding:12px 16px; font-size:.92rem; line-height:1.6; max-width:24rem; text-align:left; margin:0; }
 .err { color:var(--red); font-weight:700; }
 @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.06)} }
 @media (prefers-reduced-motion: reduce) { .play.on { animation:none; } }
@@ -44,6 +46,8 @@ footer a { color:var(--red); font-weight:700; }
   <button class="play" id="play" type="button" aria-label="Escuchar">🔊</button>
   <button class="again" id="again" type="button">↻ Escuchar otra vez</button>
   <p class="tip">Escucha y repite en voz alta 🗣️</p>
+  <button class="back" id="back" type="button">✕ Cerrar y volver al diccionario</button>
+  <p class="how" id="how"><b>¿Cómo vuelvo al diccionario?</b><br>📱 <b>Android:</b> toca el botón <b>◁ atrás</b> del celular.<br>🍎 <b>iPhone:</b> toca <b>◀</b> arriba a la izquierda, al lado de la hora.<br>💻 <b>Computador:</b> cierra esta pestaña (✕) y verás tu PDF.</p>
 </main>
 <footer>¿Quieres seguir practicando? Juega gratis en <a href="/">croacialovers.com</a> · Vidimo se!</footer>
 <script>
@@ -66,6 +70,11 @@ function play(){ if(!src) return; audio.currentTime = 0; btn.classList.add('on')
 audio.onended = () => btn.classList.remove('on');
 btn.onclick = play; document.getElementById('again').onclick = play;
 if (src) play();
+document.getElementById('back').onclick = () => {
+  if (history.length > 1) { history.back(); }
+  try { window.close(); } catch(e) {}
+  setTimeout(() => { const h=document.getElementById('how'); h.style.borderColor='#c8102e'; h.scrollIntoView({behavior:'smooth',block:'center'}); }, 400);
+};
 </script>
 </body>
 </html>
