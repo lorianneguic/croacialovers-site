@@ -330,6 +330,21 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   .game, .gband h2 .spark, .game .go span { transition: none; animation: none; }
   .game:hover { transform: none; }
 }
+
+/* diccionario destacado */
+.dic { background:#fff; padding-block:clamp(26px,4vw,44px); border-bottom:1px solid var(--line); }
+.dic-in { display:grid; grid-template-columns:minmax(180px,280px) 1fr; gap:clamp(20px,4vw,48px); align-items:center; }
+.dic-cv { position:relative; display:block; border-radius:16px; overflow:hidden; box-shadow:0 22px 44px -22px rgba(0,0,0,.55); transition:transform .2s; }
+.dic-cv:hover { transform:translateY(-4px) rotate(-1deg); }
+.dic-cv img { display:block; width:100%; height:auto; }
+.dic-cv .new { position:absolute; top:10px; right:10px; background:#ff8a1f; color:#fff; font-weight:800; font-size:.8rem; padding:4px 11px; border-radius:999px; }
+.dic h2 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; letter-spacing:-.025em; margin:6px 0 8px; }
+.dic-sub { margin:0 0 12px; color:var(--ink-soft); font-size:1.1rem; }
+.dic ul { margin:0 0 18px; padding:0; list-style:none; display:grid; gap:6px; }
+.dic-buy { display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+.dic-price s { color:var(--ink-soft); font-size:1.1rem; }
+.dic-price b { color:var(--red); font-family:var(--display); font-size:2rem; }
+@media (max-width:640px) { .dic-in { grid-template-columns:1fr; } .dic-cv { max-width:240px; margin:0 auto; } }
 </style>
 
 </head>
@@ -340,6 +355,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     Croacia Lovers
   </a>
   <nav aria-label="Secciones">
+    <a href="#diccionario">Diccionario</a>
     <a href="#libros">Libros</a>
     <a class="nav-play" href="#juegos">🎮 Juegos gratis</a>
     <a href="#videos">Videos</a>
@@ -351,6 +367,24 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 </header>
 
 <main id="inicio">
+  <section class="dic" id="diccionario" aria-label="Diccionario croata-español">
+    <div class="wrap dic-in">
+      <a class="dic-cv" href="https://payhip.com/Croacialovers" target="_blank" rel="noopener"><img src="libros/diccionario/portada.webp" alt="Portada del Diccionario croata-español de Lorianne Guić, 2.000 palabras con audio" width="600" height="900" loading="lazy"><span class="new">Nuevo</span></a>
+      <div class="dic-txt">
+        <span class="eyebrow">Nuevo · ebook con audio</span>
+        <h2>Diccionario croata‑español 📖🔊</h2>
+        <p class="dic-sub">2.000 palabras con su audio. Toca cualquier palabra y escucha cómo se pronuncia.</p>
+        <ul>
+          <li>🔊 Audio en cada una de las 2.000 palabras</li>
+          <li>🔤 Abecedario croata ilustrado con sus 30 letras</li>
+          <li>📚 Traducción, género y tipo de palabra</li>
+          <li>📱 Diseñado para celular y tablet · 💻 versión web incluida</li>
+        </ul>
+        <div class="dic-buy"><span class="dic-price"><s>$19,90</s> <b>$14,99</b></span><a class="btn primary" href="https://payhip.com/Croacialovers" target="_blank" rel="noopener">Comprar</a></div>
+      </div>
+    </div>
+  </section>
+
   <section class="shop" id="libros" aria-label="Libros de Rubia">
     <div class="wrap">
       <div class="shop-head">
