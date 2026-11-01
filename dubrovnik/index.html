@@ -13,7 +13,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Qué ver en Dubrovnik, Croacia | Guía en español con frases en croata · Croacia Lovers</title>
 <meta name="description" content="Qué ver en Dubrovnik: las murallas, el Stradun, la fuente de Onofrio, el teleférico al monte Srđ y la isla de Lokrum. Guía en español con frases útiles en croata, por Croacia Lovers.">
-<meta name="robots" content="noindex"><!-- BORRADOR: quitar noindex al publicar -->
 <link rel="canonical" href="https://croacialovers.com/dubrovnik/">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -257,6 +256,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 .back { display: inline-flex; margin-top: 10px; font-weight: 600; color: var(--red); text-decoration: none; }
 .fact { display: grid; grid-template-columns: 180px 1fr; gap: 18px; align-items: center; margin-top: 18px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
 .fact > * { min-width: 0; }
+.fact:not(:has(img)) { grid-template-columns: 1fr; }
 .fact img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 10px; }
 .fact b { display: block; font-family: var(--display); color: var(--red); margin-bottom: 4px; }
 .fact p { margin: 0; font-size: .98rem; }
@@ -297,14 +297,14 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 <main>
   <div class="wrap">
     <figure class="place-hero" style="margin:0">
-      <img src="/img/dubrovnik/portada.jpg" alt="Vista de la ciudad amurallada de Dubrovnik, con techos de tejas rojas frente al mar Adriático" width="1600" height="1066">
+      <img src="/img/dubrovnik/portada.jpg" alt="La ciudad vieja de Dubrovnik con sus murallas, el puerto antiguo y la playa Banje frente al mar turquesa" width="1600" height="1064">
       <figcaption class="in">
         <span class="tag">Lugar del mes · Noviembre 2026</span>
         <h1>Dubrovnik</h1>
         <p>La perla del Adriático: una ciudad de piedra rodeada de murallas, frente a un mar turquesa.</p>
       </figcaption>
     </figure>
-    <p class="credit" id="c-portada">Foto: Unsplash</p>
+    <p class="credit">Foto: Hans-Jürgen Weinhardt / Unsplash</p>
   </div>
 
   <section class="block" style="padding-top: 40px">
@@ -315,7 +315,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
       <div class="sights">
         <article class="sight">
-          <div class="sight-img"><img src="/img/dubrovnik/murallas.jpg" alt="Las murallas de Dubrovnik con sus torres, sobre el mar" width="1600" height="1066" loading="lazy"><p class="credit">Foto: Unsplash</p></div>
+          <div class="sight-img"><img src="/img/dubrovnik/murallas.jpg" alt="Las murallas de Dubrovnik y la torre Bokar sobre las rocas, con kayaks en el agua turquesa" width="1600" height="1200" loading="lazy"><p class="credit">Foto: Datingjungle / Unsplash</p></div>
           <div>
             <span class="num">01</span>
             <h3>Las murallas<small lang="hr">Gradske zidine</small></h3>
@@ -325,21 +325,20 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         </article>
 
         <article class="sight">
-          <div class="sight-img"><img src="/img/dubrovnik/stradun.jpg" alt="El Stradun, la calle principal de piedra pulida de Dubrovnik" width="1600" height="1066" loading="lazy"><p class="credit">Foto: Unsplash</p></div>
+          <div class="sight-img tall"><img src="/img/dubrovnik/stradun.jpg" alt="La gran fuente de Onofrio vista desde arriba, a la entrada del Stradun en Dubrovnik" width="1200" height="1600" loading="lazy"><p class="credit">Foto: Hannah Suddaby / Unsplash</p></div>
           <div>
             <span class="num">02</span>
             <h3>El Stradun<small lang="hr">Stradun · Placa</small></h3>
             <p>La calle principal de la ciudad vieja, de unos 300 metros, va desde la Puerta de Pile hasta el puerto antiguo. Su piedra caliza está tan pulida por los pasos que brilla como si estuviera mojada.</p>
             <p>A los lados salen callecitas con escaleras, tiendas y restaurantes. Es el lugar para pasear de noche, cuando la piedra se ilumina.</p>
             <div class="fact">
-              <img src="/img/dubrovnik/onofrio.jpg" alt="La gran fuente de Onofrio, redonda y con cúpula, a la entrada del Stradun" width="1400" height="1050" loading="lazy">
-              <div><b>¿Sabías que…?</b><p>La gran fuente de Onofrio, a la entrada del Stradun, es de 1438. Llevaba a la ciudad agua traída desde a casi 12 km, y todavía puedes beber de sus 16 caños con caras de piedra.</p><small>Foto: Unsplash</small></div>
+              <div><b>¿Sabías que…?</b><p>La gran fuente de Onofrio, la de la foto, está a la entrada del Stradun y es de 1438. Llevaba a la ciudad agua traída desde casi 12 km, y todavía puedes beber de sus 16 caños con caras de piedra.</p></div>
             </div>
           </div>
         </article>
 
         <article class="sight">
-          <div class="sight-img"><img src="/img/dubrovnik/srd.jpg" alt="Vista de Dubrovnik y la isla de Lokrum desde el monte Srđ" width="1600" height="1066" loading="lazy"><p class="credit">Foto: Unsplash</p></div>
+          <div class="sight-img"><img src="/img/dubrovnik/srd.jpg" alt="La ciudad amurallada de Dubrovnik y su puerto vistos desde lo alto del monte Srđ" width="1600" height="1066" loading="lazy"><p class="credit">Foto: Unsplash</p></div>
           <div>
             <span class="num">03</span>
             <h3>Teleférico al monte Srđ<small lang="hr">Žičara · Srđ</small></h3>
@@ -352,7 +351,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         </article>
 
         <article class="sight">
-          <div class="sight-img"><img src="/img/dubrovnik/lokrum.jpg" alt="La isla de Lokrum, verde y llena de pinos, frente a Dubrovnik" width="1600" height="1066" loading="lazy"><p class="credit">Foto: Unsplash</p></div>
+          <div class="sight-img"><img src="/img/dubrovnik/lokrum.jpg" alt="Una mujer con sombrero camina por las murallas de Dubrovnik; al frente, la isla verde de Lokrum en el mar" width="1600" height="1066" loading="lazy"><p class="credit">Foto: Patricia Jekki / Unsplash</p></div>
           <div>
             <span class="num">04</span>
             <h3>Isla de Lokrum<small lang="hr">Otok Lokrum</small></h3>
@@ -363,8 +362,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       </div>
 
       <h2 style="margin-top: clamp(56px, 8vw, 96px)">Y además…</h2>
+      <div class="pcards">
+        <article class="pcard"><img src="/img/dubrovnik/lovrijenac.jpg" alt="La fortaleza de Lovrijenac sobre un acantilado junto al mar, con kayaks rojos en el agua" width="1600" height="1066" loading="lazy"><div class="pbody"><h3>05 · Fortaleza de Lovrijenac</h3><p>Una fortaleza sobre una roca de 37 metros, fuera de las murallas, junto a la Puerta de Pile. Protegía la ciudad por el mar y hoy es uno de los escenarios favoritos de Game of Thrones.</p><small>Foto: Hugo Martin / Unsplash</small></div></article>
+      </div>
       <div class="more">
-        <div><h3>05 · Fortaleza de Lovrijenac</h3><p>Una fortaleza sobre una roca de 37 metros, junto a la Puerta de Pile. Fuera de la ciudad, protegía la entrada por el mar.</p></div>
         <div><h3>Playa Banje</h3><p>La playa más cercana a la ciudad vieja, a pasos de la Puerta de Ploče. Nadas con vista a las murallas y a la isla de Lokrum.</p></div>
         <div><h3>Game of Thrones</h3><p>Dubrovnik fue Desembarco del Rey en la serie. La escalera de los jesuitas aparece en una de sus escenas más famosas.</p></div>
         <div><h3>Desde Split</h3><p>Dubrovnik está a unas 4 horas de Split en bus por la costa, o en catamarán en temporada de verano.</p></div>
