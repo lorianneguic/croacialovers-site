@@ -300,7 +300,8 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 .gband h2 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -.03em; margin: 8px 0 10px; }
 .gband h2 .spark { display: inline-block; animation: wiggle 2.4s ease-in-out infinite; }
 .play-head p { margin: 0; max-width: 40rem; font-size: 1.1rem; color: #ffe9ec; }
-.play-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-top: 26px; }
+.play-row { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 12px; margin-top: 26px; }
+@media (min-width: 861px) { .play-row .game p { font-size: .8rem; } .play-row .game h3 { font-size: 1rem; } .play-row .game .go span { white-space: nowrap; padding: 8px 14px; font-size: .9rem; } }
 .game {
   position: relative; display: flex; flex-direction: column; background: #fff; color: var(--ink);
   border-radius: 20px; overflow: hidden; text-decoration: none; min-width: 0;
@@ -417,6 +418,15 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <div class="in">
             <h3>100 palabras</h3>
             <p>Las más usadas en croata, en 12 temas con audio.</p>
+            <div class="go"><span>▶ Jugar</span></div>
+          </div>
+        </a>
+        <a class="game" href="/vocabulario/opuestos/">
+          <span class="tag hot">⚡ Nuevo</span>
+          <img src="/vocabulario/img/opuestos-9x16.webp" alt="Lory de Croacia Lovers con un espejo, de día y de noche" width="720" height="1280" loading="lazy">
+          <div class="in">
+            <h3>El Espejo Croata</h3>
+            <p>48 opuestos: dan y noć, velik y malen… ¡y el rayo!</p>
             <div class="go"><span>▶ Jugar</span></div>
           </div>
         </a>
