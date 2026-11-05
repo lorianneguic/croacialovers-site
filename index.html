@@ -332,6 +332,13 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   .game:hover { transform: none; }
 }
 
+.cap-peek { margin-top:22px; min-width:0; max-width:100%; }
+#capitulo-1 .dic-txt { min-width:0; }
+.cap-peek p { margin:0 0 10px; font-weight:700; color:var(--ink-soft); }
+.cap-peek .row { display:flex; gap:12px; overflow-x:auto; padding-bottom:8px; scroll-snap-type:x mandatory; }
+.cap-peek a { flex:0 0 auto; width:min(150px,38vw); scroll-snap-align:start; border-radius:10px; overflow:hidden; box-shadow:0 10px 22px -14px rgba(0,0,0,.5); border:1px solid var(--line); transition:transform .2s; }
+.cap-peek a:hover { transform:translateY(-3px); }
+.cap-peek img { display:block; width:100%; height:auto; }
 /* diccionario destacado */
 .dic { background:#fff; padding-block:clamp(26px,4vw,44px); border-bottom:1px solid var(--line); }
 .dic-in { display:grid; grid-template-columns:minmax(180px,280px) 1fr; gap:clamp(20px,4vw,48px); align-items:center; }
@@ -382,6 +389,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <li>🖨️ PDF para imprimir y escribir · 🎮 juegos con audio de regalo</li>
         </ul>
         <div class="dic-buy"><span class="dic-price"><b>$12,99</b></span><a class="btn primary" href="https://payhip.com/b/fNEvB" target="_blank" rel="noopener">Comprar</a></div>
+        <div class="cap-peek"><p>👀 Mira cómo es por dentro (toca para ampliar):</p><div class="row"><a href="libros/aprende-croata-capitulo-1/abecedario.webp" target="_blank" rel="noopener"><img src="libros/aprende-croata-capitulo-1/abecedario.webp" alt="Página de muestra: El abecedario croata ilustrado" width="700" height="1000" loading="lazy"></a><a href="libros/aprende-croata-capitulo-1/genero.webp" target="_blank" rel="noopener"><img src="libros/aprende-croata-capitulo-1/genero.webp" alt="Página de muestra: Género: masculino, femenino y neutro" width="700" height="1000" loading="lazy"></a><a href="libros/aprende-croata-capitulo-1/biti.webp" target="_blank" rel="noopener"><img src="libros/aprende-croata-capitulo-1/biti.webp" alt="Página de muestra: El verbo biti: ser o estar" width="700" height="1000" loading="lazy"></a><a href="libros/aprende-croata-capitulo-1/adjetivos.webp" target="_blank" rel="noopener"><img src="libros/aprende-croata-capitulo-1/adjetivos.webp" alt="Página de muestra: Adjetivos y concordancia" width="700" height="1000" loading="lazy"></a><a href="libros/aprende-croata-capitulo-1/familia.webp" target="_blank" rel="noopener"><img src="libros/aprende-croata-capitulo-1/familia.webp" alt="Página de muestra: La familia en croata" width="700" height="1000" loading="lazy"></a></div></div>
       </div>
     </div>
   </section>
