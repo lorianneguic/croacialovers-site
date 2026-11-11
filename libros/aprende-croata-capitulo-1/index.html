@@ -90,6 +90,19 @@ section.s h2{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;letter-spacing:-
 .final p{color:#dbe6f7;margin:6px 0 22px}
 .alt{font-size:.92rem;color:var(--soft);margin-top:18px}
 footer{padding:28px 0 40px;text-align:center;color:var(--soft);font-size:.95rem}
+.amzcard{background:#fff;border:1px solid #d5d9d9;border-radius:16px;padding:clamp(18px,3vw,30px);display:grid;grid-template-columns:minmax(150px,230px) 1fr;gap:clamp(18px,3vw,34px);text-align:left;box-shadow:0 18px 40px -30px rgba(0,0,0,.5);font-family:Arial,"Segoe UI",sans-serif;color:#0f1111}
+.amzcard img{width:100%;height:auto;border-radius:6px}
+.amzcard h3{font-family:Arial,"Segoe UI",sans-serif;font-weight:400;font-size:clamp(1.2rem,2.4vw,1.55rem);line-height:1.3;margin:0 0 4px}
+.amz-meta{font-size:.9rem;margin:0 0 4px}.amz-meta a{color:#007185;text-decoration:none}
+.amz-series{font-size:.9rem;color:#007185;margin:0 0 12px;padding-bottom:10px;border-bottom:1px solid #e3e6e6}
+.amz-price{font-size:1.9rem;margin:6px 0 2px}.amz-price sup{font-size:.9rem}
+.amz-ship{font-size:.92rem;color:#565959;margin:0 0 14px}
+.amz-desc{font-size:.95rem;line-height:1.55}.amz-desc p{margin:0 0 10px}.amz-desc ul{margin:0 0 10px;padding-left:1.1em}
+.amz-det{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:16px 0;padding-top:14px;border-top:1px solid #e3e6e6;text-align:center;font-size:.82rem;color:#565959}
+.amz-det b{display:block;color:#0f1111;font-size:.9rem;margin-top:2px}
+.amz-btn{display:inline-block;background:#ffd814;border:1px solid #fcd200;color:#0f1111;border-radius:999px;padding:12px 26px;font-weight:700;text-decoration:none;font-size:1rem}
+.amz-btn:hover{background:#f7ca00}
+@media (max-width:720px){.amzcard{grid-template-columns:1fr}.amzcard img{max-width:220px;display:block;margin:0 auto}}
 @media (max-width:720px){
  .hero-in,.author{grid-template-columns:1fr}
  .cover{max-width:260px;margin:0 auto}
@@ -113,22 +126,44 @@ footer{padding:28px 0 40px;text-align:center;color:var(--soft);font-size:.95rem}
    <ul class="facts"><li>📖 72 páginas a color</li><li>✏️ Ejercicios con soluciones</li><li>🎮 Juegos con audio de regalo</li></ul>
    <div class="buy">
     <a class="btn amz" href="https://www.amazon.com/dp/B0HR656DRZ" target="_blank" rel="noopener">🛒 Comprar en Amazon</a>
-    <span class="price">US$14,99<small>tapa blanda</small></span>
+    <span class="price">US$14,99<small>tapa blanda · + envío</small></span>
    </div>
-   <p class="ship">📦 Amazon lo imprime y lo envía a tu casa.</p>
+   <p class="ship">📦 Amazon lo imprime y lo envía a tu casa. El costo del envío depende de tu país y lo ves en Amazon antes de pagar.</p>
   </div>
  </div>
 </section>
 
-<section class="s"><div class="wrap center">
- <span class="eyebrow">Qué vas a aprender</span>
- <h2>Todo lo que necesitas para empezar</h2>
- <p class="sub">Con ilustraciones, explicaciones claras y mucha práctica, para que aprendas a tu ritmo.</p>
- <div class="feat">
-  <div class="card"><span class="ic">🔤</span><b>Pronunciación y vocabulario</b><p>Abecedario, saludos, números, la casa, la comida y la familia, con dibujos.</p></div>
-  <div class="card"><span class="ic">🧠</span><b>Gramática simple</b><p>Género, plural, el verbo biti, adjetivos, nacionalidades y posesivos, explicados fácil.</p></div>
-  <div class="card"><span class="ic">💬</span><b>Diálogos y lecturas</b><p>Conversaciones reales y textos en croata para leer en voz alta.</p></div>
-  <div class="card"><span class="ic">✅</span><b>Ejercicios con soluciones</b><p>Completar, unir, corregir, sopa de letras… y todas las respuestas al final.</p></div>
+<section class="s"><div class="wrap">
+ <div class="center"><span class="eyebrow">Así aparece en Amazon</span><h2 style="margin-bottom:22px">Mi libro en Amazon</h2></div>
+ <div class="amzcard">
+  <a href="https://www.amazon.com/dp/B0HR656DRZ" target="_blank" rel="noopener"><img src="portada.webp" alt="Portada del libro en Amazon: Aprende Croata fácil, Capítulo 1" width="600" height="857" loading="lazy"></a>
+  <div>
+   <h3>Aprende Croata fácil: Capítulo 1 · Croata – español (Spanish Edition)</h3>
+   <p class="amz-meta">Edición en Español · de <a href="https://www.amazon.com/dp/B0HR656DRZ" target="_blank" rel="noopener">Lorianne Guić</a> (Autor) · Formato: Tapa blanda</p>
+   <p class="amz-series">Libro 1 de 1: Aprende Croata fácil</p>
+   <div class="amz-price"><sup>US$</sup>14<sup>99</sup></div>
+   <p class="amz-ship">+ envío: el costo depende de tu país y Amazon te lo muestra antes de pagar.</p>
+   <div class="amz-desc">
+    <p>¿Quieres aprender croata desde cero, en español y sin complicarte?</p>
+    <p>Aprende Croata fácil – Capítulo 1 es un libro pensado para hispanohablantes que dan sus primeros pasos en croata. Explica todo en español, con lenguaje simple, ilustraciones y muchos ejercicios para practicar.</p>
+    <p><b>En este capítulo aprenderás:</b></p>
+    <ul>
+     <li>El abecedario croata y sus letras especiales (č, ć, š, ž, đ, dž…)</li>
+     <li>Saludos, frases útiles y números</li>
+     <li>El género de las palabras y cómo formar el plural</li>
+     <li>El verbo biti (ser / estar), sus preguntas y su negación</li>
+     <li>Presentarte: tu nombre, tu país, tu nacionalidad y tu profesión</li>
+     <li>Adjetivos y sus opuestos</li>
+     <li>La casa, la comida y la familia</li>
+     <li>Los posesivos: moj, tvoj, njegov, njezin…</li>
+    </ul>
+    <p>Incluye diálogos, lecturas, sopa de letras, ejercicios de unir y completar, una autoevaluación y todas las soluciones al final. Además, tendrás acceso exclusivo a juegos con audio para practicar el vocabulario y la pronunciación.</p>
+   </div>
+   <div class="amz-det">
+    <div>Libro<b>1 de 1</b></div><div>Páginas<b>72</b></div><div>Idioma<b>Español</b></div><div>Publicación<b>5 nov 2026</b></div><div>Dimensiones<b>7 x 10 pulgadas</b></div>
+   </div>
+   <a class="amz-btn" href="https://www.amazon.com/dp/B0HR656DRZ" target="_blank" rel="noopener">Ver en Amazon</a>
+  </div>
  </div>
 </div></section>
 
@@ -177,7 +212,7 @@ footer{padding:28px 0 40px;text-align:center;color:var(--soft);font-size:.95rem}
  <div class="center"><span class="eyebrow">Preguntas frecuentes</span><h2 style="margin-bottom:12px">Antes de comprar</h2></div>
  <div class="faq">
   <details><summary>¿Necesito saber algo de croata?</summary><p>No. El libro parte desde cero, con todas las explicaciones en español.</p></details>
-  <details><summary>¿Cómo lo compro?</summary><p>Haz clic en "Comprar en Amazon". Amazon imprime el libro y te lo envía a tu casa.</p></details>
+  <details><summary>¿Cómo lo compro?</summary><p>Haz clic en "Comprar en Amazon". El libro cuesta US$14,99 más el envío, que depende del lugar donde vives. Amazon te muestra el total antes de pagar, imprime el libro y te lo envía a tu casa.</p></details>
   <details><summary>¿Cómo accedo a los juegos de regalo?</summary><p>El enlace a la página exclusiva de juegos viene escrito dentro del libro.</p></details>
   <details><summary>¿Habrá más capítulos?</summary><p>¡Sí! Este es el Capítulo 1 de la serie "Aprende Croata fácil". Sígueme en YouTube e Instagram para enterarte de los próximos.</p></details>
  </div>
