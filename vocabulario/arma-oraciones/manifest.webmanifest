@@ -1,0 +1,30 @@
+{
+ "name": "Arma oraciones en croata",
+ "short_name": "Arma oraciones",
+ "lang": "es",
+ "description": "20 juegos para armar oraciones en croata con palabras desordenadas.",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "orientation": "portrait",
+ "background_color": "#062a40",
+ "theme_color": "#0b3d5c",
+ "icons": [
+  {
+   "src": "icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
