@@ -1,5 +1,5 @@
-const C='arma-oraciones-v1';
-const ASSETS=["./", "manifest.webmanifest", "icon-192.png", "Anton-Regular.ttf", "img/b00.webp", "img/lory-sombrero.webp", "img/lory-hola.webp"];
+const C='arma-oraciones-v2';
+const ASSETS=["./", "manifest.webmanifest", "icon-192.png", "Anton-Regular.ttf", "img/b00.webp", "img/lory-senala2.webp", "img/lory-sombrero.webp"];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(ASSETS)));self.skipWaiting()});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k)))));self.clients.claim()});
 self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||new URL(e.request.url).origin!==location.origin)return;
